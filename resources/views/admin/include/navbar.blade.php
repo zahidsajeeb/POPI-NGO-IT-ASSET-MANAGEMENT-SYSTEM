@@ -9,7 +9,7 @@
     </div>
 
     <div class="navbar-brand text-center text-lg-left">
-        <a href="index.html" class="d-inline-block">
+        <a href="{{url('home')}}" class="d-inline-block">
             <img src="{{asset('login_form/img/popi.png')}}" class="d-none d-sm-block" style="width: 145px;height: 48px">
             <img src="{{asset('login_form/img/popi.png')}}" class="d-sm-none" alt="">
         </a>

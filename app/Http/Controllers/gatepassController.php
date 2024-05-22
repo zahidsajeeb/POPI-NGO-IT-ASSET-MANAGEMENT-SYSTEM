@@ -42,7 +42,6 @@ class gatepassController extends Controller
     {
         $user_id = Auth::user()->user_name;
         $user_role = Auth::user()->role;
-        if ($user_role == 'Admin') {
             if ($request->ajax()) {
                 $data = DB::table('tbl_gatepass')
                     ->select('*')
@@ -65,44 +64,44 @@ class gatepassController extends Controller
 
                     })
                     ->addColumn('send_link', function ($row) {
-                        $btn1 = '127.0.0.1:8000/gatepass/pdf/' . $row->serial_no;
+                        $btn1 = 'https://software.popibd.com/gatepass/pdf/' . $row->serial_no;
                         return $btn1;
                     })
                     ->rawColumns(['action','send_link'])
                     ->make(true);
             }
-        }
-        else{
-            if ($request->ajax()) {
-                $data = DB::table('tbl_gatepass')
-                    ->select('*')
-                    ->where('serial_no', '<>', '')
-                    ->where('created_by', '=', $user_id)
-                    ->orderBy('id', 'DESC')
-                    ->get();
-                return Datatables::of($data)
-                    ->addIndexColumn()
-                    ->addColumn('action', function ($row) {
-                        if(Auth::user()->role==='IT officer'){
-                            $btn = '<a href="' . url('gatepass_show', $row->serial_no) . '" class="btn btn-sm btn-teal" style="border-radius:0px;text-align:center;"><i class="fa fa-eye"></i> Show</a>';
-                            return $btn;
-                        }
-                        else{
-                            $btn = '<a href="' . url('gatepass_edit', $row->serial_no) . '" class="btn btn-sm btn-teal" style="border-radius:0px;text-align:center;"><i class="fa fa-edit"></i> Edit</a>
-                                <a href="' . url('gatepass_show', $row->serial_no) . '" class="btn btn-sm btn-teal" style="border-radius:0px;text-align:center;"><i class="fa fa-eye"></i> Show</a>
-                                <button type="submit" data-id="' . $row->serial_no . '" id="delete_gatepass" class="btn btn-sm btn-danger" style="border-radius:0px;"><i class="icon-trash"></i> Delete</button>';
-                            return $btn;
-                        }
 
-                    })
-                    ->addColumn('send_link', function ($row) {
-                        $btn1 = '127.0.0.1:8000/gatepass/pdf/' . $row->serial_no;
-                        return $btn1;
-                    })
-                    ->rawColumns(['action','send_link'])
-                    ->make(true);
-            }
-        }
+//        else{
+//            if ($request->ajax()) {
+//                $data = DB::table('tbl_gatepass')
+//                    ->select('*')
+//                    ->where('serial_no', '<>', '')
+//                    ->where('created_by', '=', $user_id)
+//                    ->orderBy('id', 'DESC')
+//                    ->get();
+//                return Datatables::of($data)
+//                    ->addIndexColumn()
+//                    ->addColumn('action', function ($row) {
+//                        if(Auth::user()->role==='IT officer'){
+//                            $btn = '<a href="' . url('gatepass_show', $row->serial_no) . '" class="btn btn-sm btn-teal" style="border-radius:0px;text-align:center;"><i class="fa fa-eye"></i> Show</a>';
+//                            return $btn;
+//                        }
+//                        else{
+//                            $btn = '<a href="' . url('gatepass_edit', $row->serial_no) . '" class="btn btn-sm btn-teal" style="border-radius:0px;text-align:center;"><i class="fa fa-edit"></i> Edit</a>
+//                                <a href="' . url('gatepass_show', $row->serial_no) . '" class="btn btn-sm btn-teal" style="border-radius:0px;text-align:center;"><i class="fa fa-eye"></i> Show</a>
+//                                <button type="submit" data-id="' . $row->serial_no . '" id="delete_gatepass" class="btn btn-sm btn-danger" style="border-radius:0px;"><i class="icon-trash"></i> Delete</button>';
+//                            return $btn;
+//                        }
+//
+//                    })
+//                    ->addColumn('send_link', function ($row) {
+//                        $btn1 = '127.0.0.1:8000/gatepass/pdf/' . $row->serial_no;
+//                        return $btn1;
+//                    })
+//                    ->rawColumns(['action','send_link'])
+//                    ->make(true);
+//            }
+//        }
 
     }
     public function pdf($id)

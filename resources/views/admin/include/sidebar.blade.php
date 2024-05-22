@@ -180,7 +180,7 @@
                                 <ul class="nav nav-group-sub">
                                     <li class="nav-item"><a href="{{url('distribution/history/branch')}}" class="{{ (request()->is('report/service/branch')) ? 'active' : '' }} nav-link"><i class="icon-checkbox-checked"></i> Branch</a></li>
 {{--                                    <li class="nav-item"><a href="{{url('distribution/history/head_office')}}" class="{{ (request()->is('report/service/head_office')) ? 'active' : '' }} nav-link"><i class="icon-checkbox-checked"></i> Head office</a></li>--}}
-{{--                                    <li class="nav-item"><a href="{{url('distribution/history/project')}}" class="{{ (request()->is('report/service/project')) ? 'active' : '' }} nav-link"><i class="icon-checkbox-checked"></i> Project</a></li>--}}
+                                    <li class="nav-item"><a href="{{url('distribution/history/project')}}" class="{{ (request()->is('report/service/project')) ? 'active' : '' }} nav-link"><i class="icon-checkbox-checked"></i> Project</a></li>
                                 </ul>
                             </li>
                             <li class="{{(request()->is('head_office_distribution'))||(request()->is('branch_distribution')) ? 'active' : ''}} nav-item nav-item-submenu">
@@ -188,7 +188,7 @@
                                 <ul class="nav nav-group-sub">
                                     <li class="nav-item"><a href="{{url('report/return/branch')}}" class="{{ (request()->is('report/service/branch')) ? 'active' : '' }} nav-link"><i class="icon-checkbox-checked"></i> Branch</a></li>
 {{--                                    <li class="nav-item"><a href="{{url('report/return/head_office')}}" class="{{ (request()->is('report/service/head_office')) ? 'active' : '' }} nav-link"><i class="icon-checkbox-checked"></i> Head office</a></li>--}}
-{{--                                    <li class="nav-item"><a href="{{url('report/return/project')}}" class="{{ (request()->is('report/service/project')) ? 'active' : '' }} nav-link"><i class="icon-checkbox-checked"></i> Project</a></li>--}}
+                                    <li class="nav-item"><a href="{{url('report/return/project')}}" class="{{ (request()->is('report/service/project')) ? 'active' : '' }} nav-link"><i class="icon-checkbox-checked"></i> Project</a></li>
                                 </ul>
                             </li>
                             <li class="{{(request()->is('head_office_distribution'))||(request()->is('branch_distribution')) ? 'active' : ''}} nav-item nav-item-submenu">
@@ -196,7 +196,7 @@
                                 <ul class="nav nav-group-sub">
                                     <li class="nav-item"><a href="{{url('report/service/branch')}}" class="{{ (request()->is('report/service/branch')) ? 'active' : '' }} nav-link"><i class="icon-checkbox-checked"></i> Branch Report</a></li>
 {{--                                    <li class="nav-item"><a href="{{url('report/service/head_office')}}" class="{{ (request()->is('report/service/head_office')) ? 'active' : '' }} nav-link"><i class="icon-checkbox-checked"></i> Head office Report</a></li>--}}
-{{--                                    <li class="nav-item"><a href="{{url('report/service/project')}}" class="{{ (request()->is('report/service/project')) ? 'active' : '' }} nav-link"><i class="icon-checkbox-checked"></i> Project Report</a></li>--}}
+                                    <li class="nav-item"><a href="{{url('report/service/project')}}" class="{{ (request()->is('report/service/project')) ? 'active' : '' }} nav-link"><i class="icon-checkbox-checked"></i> Project Report</a></li>
                                 </ul>
                             </li>
                             <li class="{{(request()->is('head_office_distribution'))||(request()->is('branch_distribution')) ? 'active' : ''}} nav-item nav-item-submenu">
@@ -204,7 +204,7 @@
                                 <ul class="nav nav-group-sub">
                                     <li class="nav-item"><a href="{{url('report/branch_costing')}}" class="{{ (request()->is('report/branch_costing')) ? 'active' : '' }} nav-link"><i class="icon-checkbox-checked"></i> Branch Costing Report</a></li>
 {{--                                    <li class="nav-item"><a href="{{url('report/head_office_costing')}}" class="{{ (request()->is('report/head_office_costing')) ? 'active' : '' }} nav-link"><i class="icon-checkbox-checked"></i> Head office Costing Report</a></li>--}}
-{{--                                    <li class="nav-item"><a href="{{url('report/project_costing')}}" class="{{ (request()->is('report/project_costing')) ? 'active' : '' }} nav-link"><i class="icon-checkbox-checked"></i> Project Report</a></li>--}}
+                                    <li class="nav-item"><a href="{{url('report/project_costing')}}" class="{{ (request()->is('report/project_costing')) ? 'active' : '' }} nav-link"><i class="icon-checkbox-checked"></i> Project Report</a></li>
                                 </ul>
                             </li>
                             {{--<li class="nav-item"><a href="{{url('report/return')}}" class="{{ (request()->is('report/return')) ? 'active' : '' }} nav-link"><i class="icon-checkbox-checked"></i> Return Report</a></li>--}}
